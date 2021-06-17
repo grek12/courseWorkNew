@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+   <children>
+      <MenuBar style="-fx-background-color: #158078;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Открыть" />
+                  <MenuItem mnemonicParsing="false" text="Сохранить" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="О программе" />
+                  <MenuItem mnemonicParsing="false" text="Помощь по работе" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Выход">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Завершить программу" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="556.0" prefWidth="727.0" style="-fx-background-color: #01796f;">
+         <children>
+            <TableView fx:id="tableRealtors" blendMode="MULTIPLY" layoutX="14.0" layoutY="42.0" onMouseClicked="#clickItem" prefHeight="217.0" prefWidth="362.0" style="-fx-background-color: #EEFFFF;">
+              <columns>
+                <TableColumn fx:id="surname" editable="false" prefWidth="96.0" resizable="false" sortable="false" text="Фамилия" />
+                <TableColumn fx:id="phoneNumber" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="Номер телефона" />
+                  <TableColumn fx:id="sumPrice" editable="false" prefWidth="135.0" resizable="false" sortable="false" text="Сумма сделок(руб)" />
+              </columns>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TableView>
+            <Label layoutX="133.0" layoutY="14.0" text="Список риелторов" textFill="#eeffff">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableClients" blendMode="MULTIPLY" layoutX="470.0" layoutY="42.0" prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #EEFFFF;">
+               <columns>
+                  <TableColumn fx:id="surnameClient" editable="false" prefWidth="123.0" resizable="false" sortable="false" text="Фамилия" />
+                  <TableColumn fx:id="price" editable="false" prefWidth="143.0" resizable="false" sortable="false" text="Цена сделки(руб)" />
+               </columns>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TableView>
+            <Label layoutX="546.0" layoutY="14.0" text="Список клиентов" textFill="#eeffff">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRealtorName" blendMode="MULTIPLY" layoutX="15.0" layoutY="289.0" onKeyPressed="#txtSetting2" prefHeight="25.0" prefWidth="163.0" promptText="Фамилия риелтора" />
+            <TextField fx:id="txtRealtorPhone" blendMode="MULTIPLY" layoutX="186.0" layoutY="289.0" onKeyPressed="#txtSetting" prefHeight="25.0" prefWidth="190.0" promptText="Номер риелтора" />
+            <TextField fx:id="txtClientName" blendMode="MULTIPLY" layoutX="470.0" layoutY="244.0" onKeyPressed="#txtSetting2" prefHeight="25.0" prefWidth="267.0" promptText="Фамилия клиента" />
+            <TextField fx:id="txtClientPrice" blendMode="MULTIPLY" layoutX="470.0" layoutY="274.0" onKeyPressed="#txtSetting3" prefHeight="25.0" prefWidth="267.0" promptText="Цена сделки" />
+            <Button layoutX="15.0" layoutY="319.0" mnemonicParsing="false" onAction="#addRealtor" onMouseClicked="#addTable1" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #EEFFFF;" text="Добавить риелтора">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="186.0" layoutY="319.0" mnemonicParsing="false" onAction="#removeRealtor" prefHeight="25.0" prefWidth="190.0" style="-fx-background-color: #EEFFFF;" text="Удалить риелтора">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="470.0" layoutY="304.0" mnemonicParsing="false" onAction="#addClient" onMouseClicked="#addTable2" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #EEFFFF;" text="Добавить клиента">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="611.0" layoutY="304.0" mnemonicParsing="false" onAction="#removeClient" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #EEFFFF;" text="Удалить клиента">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="611.0" layoutY="392.0" mnemonicParsing="false" onAction="#cleanTable" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #EEFFFF;" text="Очистить таблицы">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="392.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #EEFFFF;" text="Сохранить в файл">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="134.0" layoutY="392.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #EEFFFF;" text="Открыть из файла">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="sumAgentstvo" layoutX="15.0" layoutY="261.0" text="Сумма сделок агенства: 0" textFill="#eeffff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
